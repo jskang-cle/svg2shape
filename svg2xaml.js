@@ -580,14 +580,9 @@
     var rule = fillRulePrefix(prims[0].style);
     var body = prims.map(function (pr) { return serialize(pr.cmds); }).join(" ");
     var data = rule + (anchor ? boundsAnchor(vb) : "") + body;
-    var xmlns = target === "avalonia"
-      ? 'xmlns="https://github.com/avaloniaui"'
-      : 'xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"';
-    // A resource-friendly StreamGeometry-as-Geometry via x:Key on PathGeometry string.
+    // No xmlns: paste into a document that already declares the XAML namespaces.
     return '<!-- ' + target.toUpperCase() + ' : single Geometry (colorless) -->\n' +
-      '<Geometry x:Key="' + key + '"\n          ' +
-      xmlns + '\n          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">' +
-      '\n  ' + data + '\n</Geometry>';
+      '<Geometry x:Key="' + key + '">' + data + '</Geometry>';
   }
 
   function emitDrawingImage(prims, vb, anchor, key, target, defs, warnings) {
