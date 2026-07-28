@@ -554,6 +554,11 @@
     walk(svg, I, rootStyle, defs, prims);
     if (!prims.length) return { error: "No drawable shapes found." };
 
+    // Cutout: merge every shape into one evenodd path so enclosed shapes
+    // (e.g. a white plus inside a colored square) become holes. Colour is
+    // reduced to a single foreground fill; strokes are dropped.
+    if (opts.flatten) prims = flattenCutout(prims, warnings);
+
     // decide mode
     var colored = prims.some(function (pr) {
       var f = pr.style.fill, s = pr.style.stroke;
@@ -573,6 +578,24 @@
       return { xaml: emitGeometry(prims, vb, anchor, key, target), mode: "geometry", warnings: warnings, viewBox: vb };
     }
     return { xaml: emitDrawingImage(prims, vb, anchor, key, target, defs, warnings), mode: "drawingimage", warnings: warnings, viewBox: vb };
+  }
+
+  function flattenCutout(prims, warnings) {
+    var fg = null, extraColors = false, hadStroke = false;
+    prims.forEach(function (pr) {
+      if (pr.style.stroke && pr.style.stroke !== "none") hadStroke = true;
+      var f = pr.style.fill;
+      if (!f || f === "none") return;
+      var col = refId(f) ? null : parseColor(f);
+      if (refId(f)) { if (fg == null) fg = f; extraColors = true; return; }   // gradient foreground
+      if (col && col.hex6 === "FFFFFF") return;                                // white -> hole
+      if (fg == null) fg = f; else if (f !== fg) extraColors = true;
+    });
+    if (hadStroke) warnings.push("Cutout: strokes were dropped (single filled path only).");
+    if (extraColors) warnings.push("Cutout: multiple fill colours flattened to one foreground colour.");
+    var merged = [];
+    prims.forEach(function (pr) { merged = merged.concat(pr.cmds); });
+    return [{ cmds: merged, style: { fill: fg || "black", "fill-rule": "evenodd", opacity: 1 } }];
   }
 
   function emitGeometry(prims, vb, anchor, key, target) {

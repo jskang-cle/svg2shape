@@ -2,7 +2,7 @@
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
   var input = $("input"), output = $("output"), preview = $("preview"), status = $("status");
-  var target = $("target"), mode = $("mode"), key = $("key"), anchor = $("anchor");
+  var target = $("target"), mode = $("mode"), key = $("key"), anchor = $("anchor"), flatten = $("flatten");
 
   var SAMPLE = [
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">',
@@ -22,7 +22,8 @@
     try {
       res = Svg2Xaml.convert(svg, {
         target: target.value, mode: mode.value,
-        key: key.value.trim() || "Icon", anchorBounds: anchor.checked
+        key: key.value.trim() || "Icon", anchorBounds: anchor.checked,
+        flatten: flatten.checked
       });
     } catch (e) {
       output.value = ""; setStatus("err", "Conversion failed: " + e.message); return;
@@ -43,7 +44,7 @@
   }
 
   // events
-  [input, target, mode, key, anchor].forEach(function (el) {
+  [input, target, mode, key, anchor, flatten].forEach(function (el) {
     el.addEventListener("input", run);
     el.addEventListener("change", run);
   });
