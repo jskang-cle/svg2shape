@@ -1,0 +1,64 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+    <path d="M3.77979 7.99597H21.0626C21.6149 7.99597 22.0626 8.44369 22.0626 8.99597V13.0864L20.7899 18.1768H12.9212H3.77979V7.99597Z" fill="url(#paint0_linear_702_49447)"/> 
+    <path d="M21.063 8.49597C21.339 8.49617 21.563 8.71995 21.563 8.99597V13.0233L20.3999 17.6766H4.27979V8.49597H21.063Z" stroke="white" stroke-opacity="0.01"/> 
+    <path d="M5.00439 8.29578H21.063C21.4494 8.29594 21.7622 8.60947 21.7622 8.99597V12.952L20.4233 17.6903H4.3042V8.99597C4.3042 8.60937 4.6178 8.29578 5.00439 8.29578Z" stroke="url(#paint1_linear_702_49447)" stroke-width="0.6"/> 
+    <path d="M19 20H4C3.46957 20 2.96086 19.7893 2.58579 19.4142C2.21071 19.0391 2 18.5304 2 18V6C2 4.89 2.89 4 4 4H10L12 6H19C19.5304 6 20.0391 6.21071 20.4142 6.58579C20.7893 6.96086 21 7.46957 21 8H5C4.44772 8 4 8.44772 4 9V18L5.94163 10.7416C6.05863 10.3042 6.4549 10 6.90766 10H22.5582C22.887 10 23.1263 10.3119 23.0411 10.6295L20.93 18.5C20.7 19.37 19.92 20 19 20Z" fill="url(#paint2_linear_702_49447)"/> 
+    <defs> 
+        <linearGradient id="paint0_linear_702_49447" x1="9.19334" y1="8.33023" x2="6.13204" y2="19.7551" gradientUnits="userSpaceOnUse"> 
+            <stop stop-color="#668BFB"/> 
+            <stop offset="1" stop-color="white"/> 
+        </linearGradient> 
+        <linearGradient id="paint1_linear_702_49447" x1="5.1021" y1="7.99597" x2="20.2357" y2="17.9901" gradientUnits="userSpaceOnUse"> 
+            <stop stop-color="white" stop-opacity="0.7"/> 
+            <stop offset="1" stop-color="white" stop-opacity="0.01"/> 
+        </linearGradient> 
+        <linearGradient id="paint2_linear_702_49447" x1="12.605" y1="4" x2="12.605" y2="20" gradientUnits="userSpaceOnUse"> 
+            <stop stop-color="#3A62E0"/> 
+            <stop offset="1" stop-color="#668BFB"/> 
+        </linearGradient> 
+    </defs> 
+</svg>
+
+<DrawingImage x:Key="FolderDrawingImage">
+  <DrawingImage.Drawing>
+    <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+      <GeometryDrawing Geometry="F1 M24,24z M0,0z M3.77979,7.99597L21.0626,7.99597C21.6149,7.99597,22.0626,8.44369,22.0626,8.99597L22.0626,13.0864 20.7899,18.1768 12.9212,18.1768 3.77979,18.1768 3.77979,7.99597z">
+        <GeometryDrawing.Brush>
+          <LinearGradientBrush StartPoint="9.19334,8.33023" EndPoint="6.13204,19.7551" SpreadMethod="Pad" Opacity="1">
+            <GradientStop Color="#FF668BFB" Offset="0" />
+            <GradientStop Color="#FFFFFFFF" Offset="1" />
+          </LinearGradientBrush>
+        </GeometryDrawing.Brush>
+      </GeometryDrawing>
+      <GeometryDrawing Geometry="F1 M24,24z M0,0z M21.063,8.49597C21.339,8.49617,21.563,8.71995,21.563,8.99597L21.563,13.0233 20.3999,17.6766 4.27979,17.6766 4.27979,8.49597 21.063,8.49597z">
+        <GeometryDrawing.Pen>
+          <Pen Thickness="1" LineCap="Flat" LineJoin="Miter">
+            <Pen.Brush>
+              <SolidColorBrush Color="#FFFFFFFF" Opacity="0.01" />
+            </Pen.Brush>
+          </Pen>
+        </GeometryDrawing.Pen>
+      </GeometryDrawing>
+      <GeometryDrawing Geometry="F1 M24,24z M0,0z M5.00439,8.29578L21.063,8.29578C21.4494,8.29594,21.7622,8.60947,21.7622,8.99597L21.7622,12.952 20.4233,17.6903 4.3042,17.6903 4.3042,8.99597C4.3042,8.60937,4.6178,8.29578,5.00439,8.29578z">
+        <GeometryDrawing.Pen>
+          <Pen Thickness="0.6" LineCap="Flat" LineJoin="Miter">
+            <Pen.Brush>
+              <LinearGradientBrush StartPoint="5.1021,7.99597" EndPoint="20.2357,17.9901" SpreadMethod="Pad" Opacity="1">
+                <GradientStop Color="#B2FFFFFF" Offset="0" />
+                <GradientStop Color="#03FFFFFF" Offset="1" />
+              </LinearGradientBrush>
+            </Pen.Brush>
+          </Pen>
+        </GeometryDrawing.Pen>
+      </GeometryDrawing>
+      <GeometryDrawing Geometry="F1 M24,24z M0,0z M19,20L4,20C3.46957,20 2.96086,19.7893 2.58579,19.4142 2.21071,19.0391 2,18.5304 2,18L2,6C2,4.89,2.89,4,4,4L10,4 12,6 19,6C19.5304,6 20.0391,6.21071 20.4142,6.58579 20.7893,6.96086 21,7.46957 21,8L5,8C4.44772,8,4,8.44772,4,9L4,18 5.94163,10.7416C6.05863,10.3042,6.4549,10,6.90766,10L22.5582,10C22.887,10,23.1263,10.3119,23.0411,10.6295L20.93,18.5C20.7,19.37,19.92,20,19,20z">
+        <GeometryDrawing.Brush>
+          <LinearGradientBrush StartPoint="12.605,4" EndPoint="12.605,20" SpreadMethod="Pad" Opacity="1">
+            <GradientStop Color="#FF3A62E0" Offset="0" />
+            <GradientStop Color="#FF668BFB" Offset="1" />
+          </LinearGradientBrush>
+        </GeometryDrawing.Brush>
+      </GeometryDrawing>
+    </DrawingGroup>
+  </DrawingImage.Drawing>
+</DrawingImage>
